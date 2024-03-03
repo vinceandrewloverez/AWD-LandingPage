@@ -1,4 +1,4 @@
-    const projectsPerPage = 3;
+    const projectsPerPage = 4;
     let currentPage = 1;
     const projects = document.querySelectorAll('.activity');
 
