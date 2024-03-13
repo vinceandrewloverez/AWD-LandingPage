@@ -33,4 +33,30 @@
         }
     });
 
-    showPage(currentPage);
+const carouselInner = document.querySelector('.carousel-inner');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const carouselItems = document.querySelectorAll('.carousel-item');
+
+let currentIndex = 0;
+
+function showSlide(index) {
+  carouselInner.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function handlePrev() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    showSlide(currentIndex);
+  }
+}
+
+function handleNext() {
+  if (currentIndex < carouselItems.length - 1) {
+    currentIndex++;
+    showSlide(currentIndex);
+  }
+}
+
+prevBtn.addEventListener('click', handlePrev);
+nextBtn.addEventListener('click', handleNext);
